@@ -5,9 +5,9 @@ import {useSelector} from 'react-redux';
 import CartList from '../../../../components/CartList/CartList';
 import CustomButton from '../../../../components/CustomButton/CustomButton';
 import i18n from '../../../../common/utils/multiLanguages/multilanguages';
-import VNDFormat from '../../../../common/utils/formatCurrency/VNDFormat';
 import EmptyItemArea from '../../../../components/EmptyItemArea/EmptyItemArea';
 import CartScreenStyle from './CartScreenStyle';
+import vndFormatter from '../../../../common/utils/formatCurrency/vndFormatter';
 
 export default function CartScreenUI({
   cartItems,
@@ -41,7 +41,7 @@ export default function CartScreenUI({
         <View style={CartScreenStyle.viewPurchase}>
           <View>
             <Text style={CartScreenStyle.textTotal}>{i18n.t('Total')}:</Text>
-            <Text style={CartScreenStyle.textMoney}>{VNDFormat(total)}</Text>
+            <Text style={CartScreenStyle.textMoney}>{vndFormatter.format(total)}</Text>
           </View>
 
           <View style={CartScreenStyle.viewBtnPurchase}>

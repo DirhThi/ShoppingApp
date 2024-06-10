@@ -1,11 +1,11 @@
 import {View, TouchableHighlight, Text, Image, Dimensions} from 'react-native';
 
-import VNDFormat from '../../common/utils/formatCurrency/VNDFormat';
 import ProductCardStyle from './ProductCardStyle';
-
+import vndFormatter from '../../common/utils/formatCurrency/vndFormatter';
 const windowWidth = Dimensions.get('window').width;
 
 export default ProductCardUI = ({data, flexD, onPressCard}) => {
+
   return (
     <TouchableHighlight
       onPress={onPressCard}
@@ -48,13 +48,13 @@ export default ProductCardUI = ({data, flexD, onPressCard}) => {
                 ProductCardStyle.textNameProduct,
                 {
                   width:
-                    flexD == 'row' ? windowWidth * 0.50 : windowWidth * 0.32,
+                    flexD == 'row' ? windowWidth * 0.5 : windowWidth * 0.32,
                 },
               ]}>
               {data.productName}
             </Text>
             <Text style={[ProductCardStyle.textPriceProduct]}>
-              {VNDFormat(data.price)}
+              {vndFormatter.format(data.price)}
             </Text>
           </View>
           <View

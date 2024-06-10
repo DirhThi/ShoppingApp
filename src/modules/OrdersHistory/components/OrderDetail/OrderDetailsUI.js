@@ -2,8 +2,7 @@ import {View, Text, ScrollView} from 'react-native';
 
 import CustomButton from '../../../../components/CustomButton/CustomButton';
 import i18n from '../../../../common/utils/multiLanguages/multilanguages';
-import VNDFormat from '../../../../common/utils/formatCurrency/VNDFormat';
-
+import vndFormatter from '../../../../common/utils/formatCurrency/vndFormatter';
 import CartItemInfor from '../../../../components/CartItemInfor/CartItemInfor';
 import OrderDetailsStyles from './OrderDetailsStyles';
 function OrderDetailsUI({
@@ -49,7 +48,7 @@ function OrderDetailsUI({
               {i18n.t('Order Total')}
             </Text>
             <Text style={OrderDetailsStyles.totalPrice}>
-              {VNDFormat(totalMoneyOfTheOrder)}
+              {vndFormatter.format(totalMoneyOfTheOrder)}
             </Text>
           </View>
           <View style={OrderDetailsStyles.orderInfor}>

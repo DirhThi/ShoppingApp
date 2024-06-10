@@ -7,12 +7,11 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-import VNDFormat from '../../common/utils/formatCurrency/VNDFormat';
-
 import i18n from '../../common/utils/multiLanguages/multilanguages';
-
+import vndFormatter from '../../common/utils/formatCurrency/vndFormatter';
 import CustomButton from '../CustomButton/CustomButton';
 import PurchaseConfirmationPopupStyles from './PurchaseConfirmationPopupStyles';
+
 
 function PurchaseConfirmationPopupUI({
   productName,
@@ -61,7 +60,7 @@ function PurchaseConfirmationPopupUI({
                   {productName}
                 </Text>
                 <Text style={PurchaseConfirmationPopupStyles.productPrice}>
-                  {VNDFormat(productPrice)}
+                  {vndFormatter.format(productPrice)}
                 </Text>
                 <View style={PurchaseConfirmationPopupStyles.shortLine} />
                 <View style={PurchaseConfirmationPopupStyles.action}>
@@ -104,7 +103,7 @@ function PurchaseConfirmationPopupUI({
                   </View>
                   <View style={PurchaseConfirmationPopupStyles.priceBox}>
                     <Text style={PurchaseConfirmationPopupStyles.price}>
-                      {VNDFormat(parseInt(productPrice * quantityPurchase))}
+                      {vndFormatter.format(parseInt(productPrice * quantityPurchase))}
                     </Text>
                   </View>
                 </View>

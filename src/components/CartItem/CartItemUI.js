@@ -2,6 +2,7 @@ import {View, Text, Image, TouchableOpacity, TextInput} from 'react-native';
 
 import {Colors} from '../GlobalStyle';
 import CartItemStyle from './CartItemStyle';
+import vndFormatter from '../../common/utils/formatCurrency/vndFormatter';
 
 export default CartItemUI = ({
   cartItem,
@@ -17,6 +18,8 @@ export default CartItemUI = ({
   handleSubmitInputQuantity,
   i18n,
 }) => {
+  
+
   return (
     <View>
       <View
@@ -100,7 +103,7 @@ export default CartItemUI = ({
               </View>
               <View>
                 <Text style={CartItemStyle.priceText}>
-                  {VNDFormat(cartItem.product.price)}
+                  {vndFormatter.format(cartItem.product.price)}
                 </Text>
               </View>
             </View>

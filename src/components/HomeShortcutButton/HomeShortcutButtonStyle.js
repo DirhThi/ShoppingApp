@@ -18,9 +18,9 @@ export default styles = StyleSheet.create({
     elevation: 8,
   },
   viewTouchable: {
-    width: '20%',
+    width: '22%',
     aspectRatio: 1,
-    justifyContent: 'center',
+    justifyContent: 'start',
     alignItems: 'center',
   },
   icon: {

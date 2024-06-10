@@ -4,7 +4,7 @@ import {useSelector} from 'react-redux';
 
 import {Colors} from '../GlobalStyle';
 import i18n from '../../common/utils/multiLanguages/multilanguages';
-import VNDFormat from '../../common/utils/formatCurrency/VNDFormat';
+import vndFormatter from '../../common/utils/formatCurrency/vndFormatter';
 
 import CartItemInfor from '../CartItemInfor/CartItemInfor';
 import CustomButton from '../CustomButton/CustomButton';
@@ -17,6 +17,7 @@ function OrderItemUI({
   handleOpenRating,
 }) {
   i18n.locale = useSelector(state => state.language.language);
+
   return (
     <>
       <View style={OrderItemStyles.container}>
@@ -72,7 +73,7 @@ function OrderItemUI({
                 <Text style={OrderItemStyles.totalText}>
                   {i18n.t('Order Total')}: <Text></Text>
                   <Text style={OrderItemStyles.priceStyleText}>
-                    {VNDFormat(orderItemDetail.totalMoneyOfTheOrder)}
+                    {vndFormatter.format(orderItemDetail.totalMoneyOfTheOrder)}
                   </Text>
                 </Text>
               </View>

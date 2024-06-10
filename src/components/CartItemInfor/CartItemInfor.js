@@ -1,9 +1,8 @@
 import {View, Image, Text} from 'react-native';
 import {memo} from 'react';
 
-import VNDFormat from '../../common/utils/formatCurrency/VNDFormat';
-
 import CartItemInforStyles from './CartItemInforStyles';
+import vndFormatter from '../../common/utils/formatCurrency/vndFormatter';
 
 const CartItemInfor = ({imgUri, productName, OrderQuantity, productPrice}) => {
   return (
@@ -34,7 +33,7 @@ const CartItemInfor = ({imgUri, productName, OrderQuantity, productPrice}) => {
 
         <View style={CartItemInforStyles.ProductPrice}>
           <Text style={CartItemInforStyles.priceStyleText}>
-            {VNDFormat(productPrice)}
+            {vndFormatter.format(productPrice)}
           </Text>
         </View>
       </View>

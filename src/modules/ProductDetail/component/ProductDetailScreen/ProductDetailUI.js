@@ -7,17 +7,16 @@ import {
   FlatList,
   Pressable,
   TouchableOpacity,
-  RefreshControl
+  RefreshControl,
 } from 'react-native';
 
 import ProductDetailStyle from './ProductDetailStyle';
 import Title from '../../../../components/Title/Title';
 import CustomButton from '../../../../components/CustomButton/CustomButton';
-import VNDFormat from '../../../../common/utils/formatCurrency/VNDFormat';
 import PurchaseConfirmationPopup from '../../../../components/PurchaseConfirmationPopup/PurchaseConfirmationPopup';
 import i18n from '../../../../common/utils/multiLanguages/multilanguages';
 import RatingList from '../../../../components/RatingList/RatingList';
-
+import vndFormatter from '../../../../common/utils/formatCurrency/vndFormatter';
 function ProductDetailUI({
   productInfor,
   refreshing,
@@ -168,7 +167,7 @@ function ProductDetailUI({
           </View>
           <View style={ProductDetailStyle.viewPricePurchase}>
             <Text style={ProductDetailStyle.productPriceText}>
-              {VNDFormat(productInfor.price)}
+              {vndFormatter.format(productInfor.price)}
             </Text>
             <View style={ProductDetailStyle.buttonBuy}>
               <CustomButton
